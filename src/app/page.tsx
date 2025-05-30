@@ -88,7 +88,7 @@ export default function HomePage() {
             {APP_NAME} uses cutting-edge AI to bridge the information gap, making grant discovery intuitive and efficient.
           </p>
           <Image 
-            src="http://googleusercontent.com/image_generation_content/0" 
+            src="https://placehold.co/1200x400.png" 
             alt="Diverse group of people empowered by accessible grant information"
             width={1200}
             height={400}
