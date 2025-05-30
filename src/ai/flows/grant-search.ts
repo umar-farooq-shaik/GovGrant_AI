@@ -1,3 +1,4 @@
+
 // GrantSearch flow definition.
 
 'use server';
@@ -15,6 +16,7 @@ import {z} from 'genkit';
 
 const GrantSearchInputSchema = z.object({
   country: z.string().describe('The country of the user.'),
+  state: z.string().optional().describe('The state or province within the country, if specified by the user.'),
   age: z.number().describe('The age of the user.'),
   profession: z.string().describe('The profession of the user.'),
   income: z.number().describe('The income of the user.'),
@@ -29,7 +31,7 @@ const GrantSchema = z.object({
   title: z.string().describe('The title of the grant.'),
   summary: z.string().describe('A short summary of the grant.'),
   eligibility: z.string().describe('The eligibility criteria for the grant.'),
-  sourceLink: z.string().describe('The URL of the grant source.'),
+  sourceLink: z.string().describe('The URL of the grant source. This must be a valid URL string.'),
 });
 
 const GrantSearchOutputSchema = z.array(GrantSchema).describe('An array of matching government grants. If no grants are found, this MUST be an empty array.');
@@ -47,6 +49,7 @@ const prompt = ai.definePrompt({
   prompt: `You are an AI assistant helping users find relevant government grants based on their criteria and question.
 User Criteria:
 Country: {{{country}}}
+{{#if state}}State/Province: {{{state}}}{{/if}}
 Age: {{{age}}}
 Profession: {{{profession}}}
 Income: {{{income}}} {{{currency}}}
@@ -74,9 +77,6 @@ const grantSearchFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    // Ensure that if the output is null or undefined (which shouldn't happen with a well-behaved model respecting the schema),
-    // or if it's an empty object or some non-array, we default to an empty array.
-    // The prompt now explicitly asks for an empty array for no results.
     return Array.isArray(output) ? output : [];
   }
 );

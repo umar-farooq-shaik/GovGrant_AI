@@ -14,8 +14,7 @@ export interface Grant {
   summary: string;
   eligibility: string;
   sourceLink: string;
-  geminiAnswer?: string; // Optional, as per Grant Finder page description
-  // Fields for saved grants
+  geminiAnswer?: string;
   notes?: string;
 }
 
@@ -38,10 +37,15 @@ export interface FAQItem {
   answer: string;
 }
 
-// For SearchForm
+export interface State {
+  code: string;
+  name: string;
+}
+
 export interface Country {
   code: string;
   name: string;
+  states?: State[];
 }
 
 export interface Currency {

@@ -1,6 +1,6 @@
 
 import type React from 'react';
-import type { NavItem, Testimonial, FAQItem, Country, Currency, Goal, SocialLink, CompanyValue } from '@/types';
+import type { NavItem, Testimonial, FAQItem, Country, Currency, Goal, SocialLink, CompanyValue, State } from '@/types';
 import { 
   Home, Search, Bookmark, Info, Mail, Briefcase, BookOpen, BarChart3, 
   DollarSign, Building, Leaf, HeartPulse, Lightbulb, Eye, ShieldCheck, Users as UsersIcon 
@@ -43,13 +43,78 @@ export const FAQ_ITEMS: FAQItem[] = [
   { id: '4', question: 'How is my data used?', answer: 'We take your privacy seriously. Please refer to our Privacy Policy for detailed information on how we handle user data. Your search criteria are used to find relevant grants and are not stored long-term for profiling.' },
 ];
 
+export const STATES_BY_COUNTRY: { [countryCode: string]: State[] } = {
+  US: [
+    { code: 'AL', name: 'Alabama' },
+    { code: 'AK', name: 'Alaska' },
+    { code: 'AZ', name: 'Arizona' },
+    { code: 'AR', name: 'Arkansas' },
+    { code: 'CA', name: 'California' },
+    { code: 'CO', name: 'Colorado' },
+    { code: 'CT', name: 'Connecticut' },
+    { code: 'DE', name: 'Delaware' },
+    { code: 'FL', name: 'Florida' },
+    { code: 'GA', name: 'Georgia' },
+    // Add more US states as needed
+  ],
+  CA: [
+    { code: 'AB', name: 'Alberta' },
+    { code: 'BC', name: 'British Columbia' },
+    { code: 'MB', name: 'Manitoba' },
+    { code: 'NB', name: 'New Brunswick' },
+    { code: 'NL', name: 'Newfoundland and Labrador' },
+    { code: 'NS', name: 'Nova Scotia' },
+    { code: 'ON', name: 'Ontario' },
+    { code: 'PE', name: 'Prince Edward Island' },
+    { code: 'QC', name: 'Quebec' },
+    { code: 'SK', name: 'Saskatchewan' },
+  ],
+  IN: [
+    { code: 'AP', name: 'Andhra Pradesh' },
+    { code: 'AR', name: 'Arunachal Pradesh' },
+    { code: 'AS', name: 'Assam' },
+    { code: 'BR', name: 'Bihar' },
+    { code: 'CT', name: 'Chhattisgarh' },
+    { code: 'GA', name: 'Goa' },
+    { code: 'GJ', name: 'Gujarat' },
+    { code: 'HR', name: 'Haryana' },
+    { code: 'HP', name: 'Himachal Pradesh' },
+    { code: 'JH', name: 'Jharkhand' },
+    { code: 'KA', name: 'Karnataka' },
+    { code: 'KL', name: 'Kerala' },
+    { code: 'MP', name: 'Madhya Pradesh' },
+    { code: 'MH', name: 'Maharashtra' },
+    { code: 'MN', name: 'Manipur' },
+    { code: 'ML', name: 'Meghalaya' },
+    { code: 'MZ', name: 'Mizoram' },
+    { code: 'NL', name: 'Nagaland' },
+    { code: 'OR', name: 'Odisha' },
+    { code: 'PB', name: 'Punjab' },
+    { code: 'RJ', name: 'Rajasthan' },
+    { code: 'SK', name: 'Sikkim' },
+    { code: 'TN', name: 'Tamil Nadu' },
+    { code: 'TG', name: 'Telangana' },
+    { code: 'TR', name: 'Tripura' },
+    { code: 'UP', name: 'Uttar Pradesh' },
+    { code: 'UT', name: 'Uttarakhand' },
+    { code: 'WB', name: 'West Bengal' },
+    { code: 'AN', name: 'Andaman and Nicobar Islands' },
+    { code: 'CH', name: 'Chandigarh' },
+    { code: 'DN', name: 'Dadra and Nagar Haveli and Daman and Diu' },
+    { code: 'DL', name: 'Delhi' },
+    { code: 'JK', name: 'Jammu and Kashmir' },
+    { code: 'LA', name: 'Ladakh' },
+    { code: 'LD', name: 'Lakshadweep' },
+    { code: 'PY', name: 'Puducherry' },
+  ],
+};
+
 export const COUNTRIES: Country[] = [
-  // Add a comprehensive list or use a library later
-  { code: 'US', name: 'United States' },
-  { code: 'CA', name: 'Canada' },
+  { code: 'US', name: 'United States', states: STATES_BY_COUNTRY.US },
+  { code: 'CA', name: 'Canada', states: STATES_BY_COUNTRY.CA },
   { code: 'GB', name: 'United Kingdom' },
-  { code: 'AU', name: 'Australia' },
-  { code: 'IN', name: 'India' },
+  { code: 'AU', name: 'Australia' }, // Can add states later
+  { code: 'IN', name: 'India', states: STATES_BY_COUNTRY.IN },
   { code: 'DE', name: 'Germany' },
   { code: 'KE', name: 'Kenya' },
   // ... more countries

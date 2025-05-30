@@ -28,12 +28,15 @@ import type { GrantSearchInput } from "@/ai/flows/grant-search";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Search, DollarSign } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useEffect, useState } from "react";
+import type { State } from "@/types";
 
 const formSchema = z.object({
   country: z.string().min(1, "Country is required"),
-  age: z.coerce.number().min(0, "Age must be positive").optional(),
+  state: z.string().optional(),
+  age: z.union([z.coerce.number().min(0, "Age must be positive"), z.literal("")]).optional(),
   profession: z.string().optional(),
-  income: z.coerce.number().min(0, "Income must be positive").optional(),
+  income: z.union([z.coerce.number().min(0, "Income must be positive"), z.literal("")]).optional(),
   currency: z.string().optional(),
   goal: z.string().min(1, "Goal is required"),
   query: z.string().min(5, "Please provide a specific question.").max(300),
@@ -51,21 +54,37 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       country: "",
-      age: undefined,
+      state: "",
+      age: "",
       profession: "",
-      income: undefined,
-      currency: CURRENCIES[0]?.code || "USD", // Default to first currency or USD
+      income: "",
+      currency: CURRENCIES[0]?.code || "USD", 
       goal: "",
       query: "",
     },
   });
 
+  const selectedCountryName = form.watch("country");
+  const [availableStates, setAvailableStates] = useState<State[]>([]);
+
+  useEffect(() => {
+    if (selectedCountryName) {
+      const countryData = COUNTRIES.find(c => c.name === selectedCountryName);
+      setAvailableStates(countryData?.states || []);
+      form.setValue("state", ""); // Reset state when country changes
+    } else {
+      setAvailableStates([]);
+      form.setValue("state", "");
+    }
+  }, [selectedCountryName, form]);
+
   function handleFormSubmit(values: SearchFormValues) {
     const inputForAI: GrantSearchInput = {
       country: values.country,
-      age: values.age || 0, // AI model expects number
+      state: values.state || undefined, // Pass undefined if empty string
+      age: typeof values.age === 'number' ? values.age : 0,
       profession: values.profession || "Not specified",
-      income: values.income || 0, // AI model expects number
+      income: typeof values.income === 'number' ? values.income : 0,
       currency: values.currency || "USD",
       goal: values.goal,
       query: values.query,
@@ -90,7 +109,7 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="font-bold text-indigo-700">Country</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger className="border-gray-300 focus:ring-indigo-500">
                           <SelectValue placeholder="Select your country" />
@@ -111,17 +130,47 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
 
               <FormField
                 control={form.control}
+                name="state"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="font-bold text-indigo-700">State/Province (Optional)</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      value={field.value}
+                      defaultValue={field.value}
+                      disabled={availableStates.length === 0 && !selectedCountryName}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="border-gray-300 focus:ring-indigo-500">
+                          <SelectValue placeholder={availableStates.length > 0 ? "Select state/province" : (selectedCountryName ? "N/A for selected country" : "Select country first")} />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {availableStates.map((state) => (
+                          <SelectItem key={state.code} value={state.name}>
+                            {state.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
                 name="age"
-                render={({ field: { value, onChange, ...restField } }) => (
+                render={({ field }) => (
                   <FormItem>
                     <FormLabel className="font-bold text-indigo-700">Age (Optional)</FormLabel>
                     <FormControl>
                       <Input
                         type="number"
                         placeholder="Enter your age"
-                        {...restField}
-                        value={value ?? ''}
-                        onChange={e => onChange(e.target.valueAsNumber)}
+                        {...field}
+                        value={field.value ?? ""}
+                        onChange={e => field.onChange(e.target.value === "" ? "" : parseInt(e.target.value, 10))}
                         className="border-gray-300 focus:ring-indigo-500"
                       />
                     </FormControl>
@@ -143,8 +192,8 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                   </FormItem>
                 )}
               />
-
-              <FormItem>
+              
+              <FormItem className="md:col-span-2"> {/* Make income section span 2 cols on md for better layout */}
                 <FormLabel className="font-bold text-indigo-700">Income (Optional)</FormLabel>
                  <TooltipProvider>
                     <Tooltip>
@@ -160,15 +209,15 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                   <FormField
                     control={form.control}
                     name="income"
-                    render={({ field: { value, onChange, ...restField } }) => (
+                    render={({ field }) => (
                       <FormItem className="flex-grow">
                         <FormControl>
                           <Input
                             type="number"
                             placeholder="Amount"
-                            {...restField}
-                            value={value ?? ''}
-                            onChange={e => onChange(e.target.valueAsNumber)}
+                            {...field}
+                            value={field.value ?? ""}
+                            onChange={e => field.onChange(e.target.value === "" ? "" : parseInt(e.target.value, 10))}
                             className="border-gray-300 focus:ring-indigo-500"
                           />
                         </FormControl>
@@ -181,7 +230,7 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                     name="currency"
                     render={({ field }) => (
                       <FormItem className="w-1/3">
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger className="border-gray-300 focus:ring-indigo-500">
                               <SelectValue placeholder="Currency" />
@@ -219,7 +268,7 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger className="border-gray-300 focus:ring-indigo-500 text-center">
                         <SelectValue placeholder="Select your primary goal" />
