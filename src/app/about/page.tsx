@@ -1,9 +1,9 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { APP_NAME, TEAM_MEMBERS, COMPANY_VALUES } from '@/lib/constants';
+import { APP_NAME, TEAM_MEMBERS, COMPANY_VALUES } from '@/lib/constants.tsx';
 import type { Metadata } from 'next';
-import { Target, Users, Handshake } from 'lucide-react'; // Removed Eye, ShieldCheck as they come from COMPANY_VALUES
+import { Target, Users, Handshake, Eye, ShieldCheck } from 'lucide-react'; 
 
 export const metadata: Metadata = {
   title: `About Us | ${APP_NAME}`,
@@ -42,11 +42,11 @@ export default function AboutPage() {
             <div>
               <Image
                 src="https://placehold.co/600x400.png"
-                alt="Team working collaboratively"
+                alt="A diverse group collaborating on the initial concepts for GovGrant AI, symbolizing the app's origin."
                 width={600}
                 height={400}
                 className="rounded-xl shadow-xl"
-                data-ai-hint="team collaboration"
+                data-ai-hint="idea generation"
               />
             </div>
           </div>
