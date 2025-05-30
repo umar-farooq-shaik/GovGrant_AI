@@ -85,11 +85,11 @@ export default function HomePage() {
           </p>
           <Image 
             src="https://srdalvifoundation.com/wp-content/uploads/2023/06/Blog-Image-9.png" 
-            alt="People benefiting from government schemes, symbolizing empowerment and accessibility."
-            width={1200}
-            height={400}
+            alt="Diverse individuals benefiting from government schemes, symbolizing accessibility and empowerment."
+            width={900}
+            height={300}
             className="rounded-xl shadow-lg mx-auto border"
-            data-ai-hint="community empowerment"
+            data-ai-hint="community empowerment technology"
           />
         </div>
       </section>
