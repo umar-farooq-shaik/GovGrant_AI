@@ -31,7 +31,7 @@ export const HOW_IT_WORKS_STEPS = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'Aisha Khan', role: 'Student', avatarUrl: 'data:image/jpeg;base64,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', dataAiHint: 'woman smiling', quote: 'GovGrant AI helped me find scholarships I never knew existed! The process was so simple.' },
+  { id: '1', name: 'Aisha Khan', role: 'Student', avatarUrl: 'https://placehold.co/100x100.png', dataAiHint: 'woman smiling', quote: 'GovGrant AI helped me find scholarships I never knew existed! The process was so simple.' },
   { id: '2', name: 'John Doe', role: 'Small Business Owner', avatarUrl: 'https://media.istockphoto.com/id/1087531642/vector/male-face-silhouette-or-icon-man-avatar-profile-unknown-or-anonymous-person-vector.jpg?s=612x612&w=0&k=20&c=FEppaMMfyIYV2HJ6Ty8tLmPL1GX6Tz9u9Y8SCRrkD-o=', dataAiHint: 'profile silhouette', quote: 'Finally, a tool that demystifies government grants for entrepreneurs. Highly recommended!' },
   { id: '3', name: 'Maria Garcia', role: 'Farmer', avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5bH_tuxpPsI7P023AzdLw3tExS6KdVpLqbg&s', dataAiHint: 'person happy', quote: 'I found vital subsidies for my farm through this platform. It\'s a game-changer for agricultural communities.' },
 ];
@@ -43,82 +43,27 @@ export const FAQ_ITEMS: FAQItem[] = [
   { id: '4', question: 'How is my data used?', answer: 'We take your privacy seriously. Please refer to our Privacy Policy for detailed information on how we handle user data. Your search criteria are used to find relevant grants and are not stored long-term for profiling.' },
 ];
 
-export const STATES_BY_COUNTRY: { [countryCode: string]: State[] } = {
-  US: [
-    { code: 'AL', name: 'Alabama' },
-    { code: 'AK', name: 'Alaska' },
-    { code: 'AZ', name: 'Arizona' },
-    { code: 'AR', name: 'Arkansas' },
-    { code: 'CA', name: 'California' },
-    { code: 'CO', name: 'Colorado' },
-    { code: 'CT', name: 'Connecticut' },
-    { code: 'DE', name: 'Delaware' },
-    { code: 'FL', name: 'Florida' },
-    { code: 'GA', name: 'Georgia' },
-    // Add more US states as needed
-  ],
-  CA: [
-    { code: 'AB', name: 'Alberta' },
-    { code: 'BC', name: 'British Columbia' },
-    { code: 'MB', name: 'Manitoba' },
-    { code: 'NB', name: 'New Brunswick' },
-    { code: 'NL', name: 'Newfoundland and Labrador' },
-    { code: 'NS', name: 'Nova Scotia' },
-    { code: 'ON', name: 'Ontario' },
-    { code: 'PE', name: 'Prince Edward Island' },
-    { code: 'QC', name: 'Quebec' },
-    { code: 'SK', name: 'Saskatchewan' },
-  ],
-  IN: [
-    { code: 'AP', name: 'Andhra Pradesh' },
-    { code: 'AR', name: 'Arunachal Pradesh' },
-    { code: 'AS', name: 'Assam' },
-    { code: 'BR', name: 'Bihar' },
-    { code: 'CT', name: 'Chhattisgarh' },
-    { code: 'GA', name: 'Goa' },
-    { code: 'GJ', name: 'Gujarat' },
-    { code: 'HR', name: 'Haryana' },
-    { code: 'HP', name: 'Himachal Pradesh' },
-    { code: 'JH', name: 'Jharkhand' },
-    { code: 'KA', name: 'Karnataka' },
-    { code: 'KL', name: 'Kerala' },
-    { code: 'MP', name: 'Madhya Pradesh' },
-    { code: 'MH', name: 'Maharashtra' },
-    { code: 'MN', name: 'Manipur' },
-    { code: 'ML', name: 'Meghalaya' },
-    { code: 'MZ', name: 'Mizoram' },
-    { code: 'NL', name: 'Nagaland' },
-    { code: 'OR', name: 'Odisha' },
-    { code: 'PB', name: 'Punjab' },
-    { code: 'RJ', name: 'Rajasthan' },
-    { code: 'SK', name: 'Sikkim' },
-    { code: 'TN', name: 'Tamil Nadu' },
-    { code: 'TG', name: 'Telangana' },
-    { code: 'TR', name: 'Tripura' },
-    { code: 'UP', name: 'Uttar Pradesh' },
-    { code: 'UT', name: 'Uttarakhand' },
-    { code: 'WB', name: 'West Bengal' },
-    { code: 'AN', name: 'Andaman and Nicobar Islands' },
-    { code: 'CH', name: 'Chandigarh' },
-    { code: 'DN', name: 'Dadra and Nagar Haveli and Daman and Diu' },
-    { code: 'DL', name: 'Delhi' },
-    { code: 'JK', name: 'Jammu and Kashmir' },
-    { code: 'LA', name: 'Ladakh' },
-    { code: 'LD', name: 'Lakshadweep' },
-    { code: 'PY', name: 'Puducherry' },
-  ],
-};
-
+// Data for Grant Finder Form
 export const COUNTRIES: Country[] = [
-  { code: 'US', name: 'United States', states: STATES_BY_COUNTRY.US },
-  { code: 'CA', name: 'Canada', states: STATES_BY_COUNTRY.CA },
-  { code: 'GB', name: 'United Kingdom' },
-  { code: 'AU', name: 'Australia' }, // Can add states later
-  { code: 'IN', name: 'India', states: STATES_BY_COUNTRY.IN },
-  { code: 'DE', name: 'Germany' },
-  { code: 'KE', name: 'Kenya' },
-  // ... more countries
-];
+    { code: 'US', name: 'United States', states: [
+      { code: 'AL', name: 'Alabama' }, { code: 'AK', name: 'Alaska' }, { code: 'AZ', name: 'Arizona' }, // ... more US states
+      { code: 'CA', name: 'California' }, { code: 'CO', name: 'Colorado' }, { code: 'NY', name: 'New York' }
+    ]},
+    { code: 'CA', name: 'Canada', states: [
+      { code: 'AB', name: 'Alberta' }, { code: 'BC', name: 'British Columbia' }, { code: 'ON', name: 'Ontario' }, // ... more Canadian provinces
+      { code: 'QC', name: 'Quebec' }
+    ]},
+    { code: 'GB', name: 'United Kingdom' }, // No states/regions defined for simplicity
+    { code: 'AU', name: 'Australia', states: [
+      { code: 'NSW', name: 'New South Wales'}, { code: 'QLD', name: 'Queensland'}, { code: 'VIC', name: 'Victoria'}
+    ]},
+    { code: 'IN', name: 'India', states: [
+      { code: 'MH', name: 'Maharashtra' }, { code: 'KA', name: 'Karnataka' }, { code: 'DL', name: 'Delhi' }, // ... more Indian states
+      { code: 'TN', name: 'Tamil Nadu' }
+    ]},
+    { code: 'DE', name: 'Germany' },
+    { code: 'KE', name: 'Kenya' },
+  ];
 
 export const CURRENCIES: Currency[] = [
   { code: 'USD', name: 'USD - US Dollar' },
@@ -128,7 +73,6 @@ export const CURRENCIES: Currency[] = [
   { code: 'INR', name: 'INR - Indian Rupee' },
   { code: 'AUD', name: 'AUD - Australian Dollar' },
   { code: 'KES', name: 'KES - Kenyan Shilling' },
-  // ... more currencies
 ];
 
 export const GOALS: Goal[] = [
@@ -141,8 +85,8 @@ export const GOALS: Goal[] = [
 ];
 
 export const TEAM_MEMBERS = [
-  { id: '1', name: 'Umar Farooq', role: 'Founder & CEO', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'person professional' },
-  { id: '2', name: 'Code Master', role: 'Lead Developer', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'developer coding' },
+  { id: '1', name: 'Umar Farooq', role: 'Founder & CEO', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'person professional', bio: 'Dedicated to democratizing access to public welfare through technology.' },
+  { id: '2', name: 'Code Master', role: 'Lead Developer', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'developer coding', bio: 'Expert in building scalable and user-friendly AI-driven applications.' },
 ];
 
 export const COMPANY_VALUES: CompanyValue[] = [

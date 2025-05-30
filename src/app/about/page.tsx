@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { APP_NAME, TEAM_MEMBERS, COMPANY_VALUES } from '@/lib/constants.tsx';
 import type { Metadata } from 'next';
-import { Target, Users, Handshake } from 'lucide-react'; 
+import { Target, Users, Handshake, Eye, ShieldCheck, Users as UsersIcon } from 'lucide-react'; 
 
 export const metadata: Metadata = {
   title: `About Us | ${APP_NAME}`,
@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  // Helper to get the correct icon component for company values
+  const getCompanyValueIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'Eye': return Eye;
+      case 'ShieldCheck': return ShieldCheck;
+      case 'UsersIcon': return UsersIcon; // Ensure your constants map to these string names or use the components directly
+      default: return Handshake; // Fallback icon
+    }
+  };
+
   return (
     <div className="bg-background">
       {/* Hero Section */}
@@ -42,11 +52,11 @@ export default function AboutPage() {
             <div>
               <Image
                 src="https://srdalvifoundation.com/wp-content/uploads/2023/06/Blog-Image-9.png"
-                alt="Diverse individuals engaging with community programs, illustrating the need GovGrant AI addresses."
+                alt="Illustration of community members benefiting from accessible information, representing the GovGrant AI story."
                 width={600}
                 height={400}
                 className="rounded-xl shadow-xl"
-                data-ai-hint="community programs"
+                data-ai-hint="community support program"
               />
             </div>
           </div>
@@ -92,15 +102,18 @@ export default function AboutPage() {
           <Handshake className="mx-auto h-12 w-12 text-primary mb-4" />
           <h2 className="text-3xl font-bold text-center text-primary mb-12">Our Core Values</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {COMPANY_VALUES.map((value) => (
-              <Card key={value.id} className="text-center p-6 shadow-lg rounded-xl border-t-4 border-primary">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
-                  <value.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-semibold text-primary mb-2">{value.title}</h3>
-                <p className="text-muted-foreground">{value.description}</p>
-              </Card>
-            ))}
+            {COMPANY_VALUES.map((value) => {
+              const IconComponent = value.icon; // LucideIcon type means it's already a component
+              return (
+                <Card key={value.id} className="text-center p-6 shadow-lg rounded-xl border-t-4 border-primary">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
+                    <IconComponent className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-primary mb-2">{value.title}</h3>
+                  <p className="text-muted-foreground">{value.description}</p>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
