@@ -34,6 +34,12 @@ const nextConfig: NextConfig = {
         hostname: 'srdalvifoundation.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'miro.medium.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
