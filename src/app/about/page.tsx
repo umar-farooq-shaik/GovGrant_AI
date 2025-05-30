@@ -1,7 +1,6 @@
-
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { APP_NAME, TEAM_MEMBERS, COMPANY_VALUES } from '@/lib/constants.tsx';
+import { APP_NAME, TEAM_MEMBERS, COMPANY_VALUES } from '@/lib/constants';
 import type { Metadata } from 'next';
 import { Target, Users, Handshake, Eye, ShieldCheck, Users as UsersIcon } from 'lucide-react'; 
 
@@ -52,11 +51,11 @@ export default function AboutPage() {
             <div>
               <Image
                 src="https://srdalvifoundation.com/wp-content/uploads/2023/06/Blog-Image-9.png"
-                alt="Illustration of community members benefiting from accessible information, representing the GovGrant AI story."
+                alt="Team collaborating on the GovGrant AI project, illustrating our story and mission."
                 width={600}
                 height={400}
                 className="rounded-xl shadow-xl"
-                data-ai-hint="community support program"
+                data-ai-hint="team collaboration"
               />
             </div>
           </div>
@@ -74,15 +73,17 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {TEAM_MEMBERS.map((member) => (
               <Card key={member.id} className="text-center shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="relative h-48 w-full">
-                    <Image
-                    src={member.imageUrl}
-                    alt={member.name}
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint={member.dataAiHint}
-                    />
-                </div>
+                {member.imageUrl && (
+                  <div className="relative h-48 w-full">
+                      <Image
+                      src={member.imageUrl}
+                      alt={member.name}
+                      layout="fill"
+                      objectFit="cover"
+                      data-ai-hint={member.dataAiHint}
+                      />
+                  </div>
+                )}
                 <CardHeader className="pt-6">
                   <CardTitle className="text-xl font-semibold text-primary">{member.name}</CardTitle>
                   <p className="text-sm text-accent">{member.role}</p>
