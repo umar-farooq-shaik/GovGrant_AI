@@ -29,7 +29,7 @@ const GrantSchema = z.object({
   title: z.string().describe('The title of the grant.'),
   summary: z.string().describe('A short summary of the grant.'),
   eligibility: z.string().describe('The eligibility criteria for the grant.'),
-  sourceLink: z.string().url().describe('The URL of the grant source.'),
+  sourceLink: z.string().describe('The URL of the grant source.'), // Removed .url()
 });
 
 const GrantSearchOutputSchema = z.array(GrantSchema).describe('An array of matching government grants.');
