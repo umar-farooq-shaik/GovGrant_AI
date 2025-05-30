@@ -19,7 +19,7 @@ export default function HomePage() {
       <section className="bg-gradient-to-r from-light-lavender to-lilac py-20 md:py-32">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-deep-indigo sm:text-5xl md:text-6xl">
-            Find Government Grants <span className="text-primary">You Deserve</span> {/* Using primary for 'You Deserve' which is also Deep Indigo */}
+            Find Government Grants <span className="text-primary">You Deserve</span>
           </h1>
           <p className="mt-6 text-lg leading-8 text-slate-gray max-w-2xl mx-auto">
             {APP_NAME} helps you discover government grants, subsidies, and welfare schemes you are eligible for — using conversational natural language search powered by Google Gemini AI.
@@ -85,11 +85,11 @@ export default function HomePage() {
           </p>
           <Image 
             src="https://placehold.co/1200x400.png" 
-            alt="A diverse group of people collaborating and finding opportunities using technology, symbolizing accessible information and empowerment."
+            alt="Placeholder image for homepage hero section illustrating accessible information and empowerment."
             width={1200}
             height={400}
             className="rounded-xl shadow-lg mx-auto border"
-            data-ai-hint="empowerment opportunity"
+            data-ai-hint="homepage hero"
           />
         </div>
       </section>
