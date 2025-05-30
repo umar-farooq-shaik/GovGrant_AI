@@ -42,11 +42,11 @@ export default function AboutPage() {
             <div>
               <Image
                 src="https://placehold.co/600x400.png"
-                alt="A diverse group collaborating on the initial concepts for GovGrant AI, symbolizing the app's origin."
+                alt="A diverse group of people collaborating and brainstorming ideas for GovGrant AI, symbolizing the app's origin and user-centric approach."
                 width={600}
                 height={400}
                 className="rounded-xl shadow-xl"
-                data-ai-hint="idea generation"
+                data-ai-hint="team collaboration"
               />
             </div>
           </div>
