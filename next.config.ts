@@ -23,6 +23,18 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'googleusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'srdalvifoundation.com',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 };
