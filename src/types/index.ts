@@ -1,4 +1,5 @@
 
+import type React from 'react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface NavItem {
@@ -51,4 +52,18 @@ export interface Currency {
 export interface Goal {
   id: string;
   name: string;
+  icon: LucideIcon;
+}
+
+export interface SocialLink {
+  name: string;
+  href: string;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+}
+
+export interface CompanyValue {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
 }

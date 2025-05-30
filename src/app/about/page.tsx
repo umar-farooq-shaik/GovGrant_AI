@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { APP_NAME, TEAM_MEMBERS, COMPANY_VALUES } from '@/lib/constants';
 import type { Metadata } from 'next';
-import { Target, Users, Eye, ShieldCheck, Handshake } from 'lucide-react'; // Added more icons
+import { Target, Users, Handshake } from 'lucide-react'; // Removed Eye, ShieldCheck as they come from COMPANY_VALUES
 
 export const metadata: Metadata = {
   title: `About Us | ${APP_NAME}`,
@@ -96,10 +96,8 @@ export default function AboutPage() {
             {COMPANY_VALUES.map((value) => (
               <Card key={value.id} className="text-center p-6 shadow-lg rounded-xl border-t-4 border-primary">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
-                  {value.id === 'accessibility' && <Eye className="h-6 w-6" />}
-                  {value.id === 'privacy' && <ShieldCheck className="h-6 w-6" />}
-                  {value.id === 'transparency' && <Users className="h-6 w-6" />} 
-                                  </div>
+                  <value.icon className="h-6 w-6" />
+                </div>
                 <h3 className="text-xl font-semibold text-primary mb-2">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
               </Card>
