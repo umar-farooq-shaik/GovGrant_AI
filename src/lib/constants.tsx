@@ -32,7 +32,7 @@ export const HOW_IT_WORKS_STEPS = [
 
 export const TESTIMONIALS: Testimonial[] = [
   { id: '1', name: 'Aisha Khan', role: 'Student', avatarUrl: 'https://placehold.co/100x100.png', dataAiHint: 'woman smiling', quote: 'GovGrant AI helped me find scholarships I never knew existed! The process was so simple.' },
-  { id: '2', name: 'John Doe', role: 'Small Business Owner', avatarUrl: 'https://placehold.co/100x100.png', dataAiHint: 'man portrait', quote: 'Finally, a tool that demystifies government grants for entrepreneurs. Highly recommended!' },
+  { id: '2', name: 'John Doe', role: 'Small Business Owner', avatarUrl: 'https://media.istockphoto.com/id/1142192548/vector/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg', dataAiHint: 'profile silhouette', quote: 'Finally, a tool that demystifies government grants for entrepreneurs. Highly recommended!' },
   { id: '3', name: 'Maria Garcia', role: 'Farmer', avatarUrl: 'https://placehold.co/100x100.png', dataAiHint: 'person happy', quote: 'I found vital subsidies for my farm through this platform. It\'s a game-changer for agricultural communities.' },
 ];
 
@@ -141,7 +141,7 @@ export const GOALS: Goal[] = [
 ];
 
 export const TEAM_MEMBERS = [
-  { id: '1', name: 'Dr. Visionary', role: 'Founder & CEO', imageUrl: 'https://media.istockphoto.com/id/1142192548/vector/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg', dataAiHint: 'profile silhouette', bio: 'Dedicated to democratizing access to public welfare through technology.' },
+  { id: '1', name: 'Dr. Visionary', role: 'Founder & CEO', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'person professional', bio: 'Dedicated to democratizing access to public welfare through technology.' },
   { id: '2', name: 'Code Master', role: 'Lead Developer', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'developer working', bio: 'Expert in building scalable and user-friendly AI-driven applications.' },
   { id: '3', name: 'Grant Guru', role: 'Policy & Research Lead', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'researcher portrait', bio: 'Passionate about connecting people with the resources they need to thrive.' },
 ];
