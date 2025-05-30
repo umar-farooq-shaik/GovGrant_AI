@@ -85,11 +85,11 @@ export default function HomePage() {
           </p>
           <Image 
             src="https://placehold.co/1200x400.png" 
-            alt="Placeholder image for homepage hero section illustrating accessible information and empowerment."
+            alt="Diverse individuals using technology to access clear information, symbolizing empowerment and transparency."
             width={1200}
             height={400}
             className="rounded-xl shadow-lg mx-auto border"
-            data-ai-hint="homepage hero"
+            data-ai-hint="community empowerment technology"
           />
         </div>
       </section>
