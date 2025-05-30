@@ -141,18 +141,15 @@ export const GOALS: Goal[] = [
 ];
 
 export const TEAM_MEMBERS = [
-  { id: '1', name: 'Dr. Visionary', role: 'Founder & CEO', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'ceo portrait', bio: 'Dedicated to democratizing access to public welfare through technology.' },
-  { id: '2', name: 'Code Master', role: 'Lead Developer', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'developer at computer', bio: 'Expert in building scalable and user-friendly AI-driven applications.' },
-  { id: '3', name: 'Grant Guru', role: 'Policy & Research Lead', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'policy expert', bio: 'Passionate about connecting people with the resources they need to thrive.' },
+  { id: '1', name: 'Dr. Visionary', role: 'Founder & CEO', imageUrl: 'https://media.istockphoto.com/id/1142192548/vector/man-avatar-profile-male-face-silhouette-or-icon-isolated-on-white-background-vector.jpg', dataAiHint: 'profile silhouette', bio: 'Dedicated to democratizing access to public welfare through technology.' },
+  { id: '2', name: 'Code Master', role: 'Lead Developer', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'developer working', bio: 'Expert in building scalable and user-friendly AI-driven applications.' },
+  { id: '3', name: 'Grant Guru', role: 'Policy & Research Lead', imageUrl: 'https://placehold.co/150x150.png', dataAiHint: 'researcher portrait', bio: 'Passionate about connecting people with the resources they need to thrive.' },
 ];
 
 export const COMPANY_VALUES: CompanyValue[] = [
   { id: 'accessibility', title: 'Accessibility', description: 'Ensuring everyone, regardless of ability or background, can easily access grant information.', icon: Eye },
   { id: 'privacy', title: 'Privacy', description: 'Protecting user data and maintaining confidentiality is paramount to our operations.', icon: ShieldCheck },
   { id: 'transparency', title: 'Transparency', description: 'Providing clear, unbiased information about government schemes and our processes.', icon: UsersIcon },
-  // Corrected: Added 'mission' as a value if it's distinct, or ensured icons for existing ones are correct.
-  // For "Our Mission" the icon used in about/page.tsx is Target. If it's a core value, it should be here.
-  // Assuming the 3 listed are the core values and the icons are Eye, ShieldCheck, UsersIcon.
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [

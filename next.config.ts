@@ -40,6 +40,12 @@ const nextConfig: NextConfig = {
         hostname: 'miro.medium.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.istockphoto.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
