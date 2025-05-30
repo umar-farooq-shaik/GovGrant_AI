@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -8,7 +9,17 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
   	extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', 'sans-serif'], // Use Inter font
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -43,6 +54,16 @@ export default {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
+        // Specific theme colors from request
+        'deep-indigo': '#1E1F4B',
+        'amber': '#F9A826',
+        'darker-amber': '#C77C02',
+        'light-lavender': '#EDE7F6',
+        'lilac': '#F3E5F5',
+        'slate-gray': '#616161',
+        'teal-action': '#26A69A',
+        'teal-action-hover': '#00796B',
+        'sky-blue-action': '#42A5F5',
   			chart: {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',
@@ -50,7 +71,7 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-  			sidebar: {
+  			sidebar: { // Keep sidebar variables if shadcn/sidebar is used elsewhere or for consistency
   				DEFAULT: 'hsl(var(--sidebar-background))',
   				foreground: 'hsl(var(--sidebar-foreground))',
   				primary: 'hsl(var(--sidebar-primary))',
