@@ -57,10 +57,9 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-secondary/50">
         <div className="container mx-auto px-4">
           <Users className="mx-auto h-12 w-12 text-primary mb-4" />
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">Meet the Team</h2>
+          <h2 className="text-3xl font-bold text-center text-primary mb-12">About the Team</h2>
           <p className="text-lg text-center text-muted-foreground max-w-2xl mx-auto mb-12">
             We are a passionate group of developers, designers, and researchers committed to making a positive impact.
-            (This is placeholder content.)
           </p>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {TEAM_MEMBERS.map((member) => (
