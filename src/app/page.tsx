@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TestimonialCard } from '@/components/TestimonialCard';
-import { APP_NAME, APP_DESCRIPTION, WHY_GOVGRANT_AI_ITEMS, HOW_IT_WORKS_STEPS, TESTIMONIALS } from '@/lib/constants';
+import { APP_NAME, APP_DESCRIPTION, WHY_GOVGRANT_AI_ITEMS, HOW_IT_WORKS_STEPS, TESTIMONIALS } from '@/lib/constants.tsx';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -89,11 +89,11 @@ export default function HomePage() {
           </p>
           <Image 
             src="https://placehold.co/1200x400.png" 
-            alt="Diverse group of people benefiting from grants"
+            alt="Diverse group of people empowered by accessible grant information"
             width={1200}
             height={400}
             className="rounded-xl shadow-lg mx-auto"
-            data-ai-hint="community diversity"
+            data-ai-hint="empowerment opportunity"
           />
         </div>
       </section>
