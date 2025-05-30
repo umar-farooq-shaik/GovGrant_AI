@@ -13,8 +13,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 25%;
 
-    --primary: 210 90% 50%; /* Google-esque Blue */
-    --primary-foreground: 0 0% 100%; /* White text on Blue */
+    --primary: 239 48% 21%; /* Dark Blue from #1E1F4B */
+    --primary-foreground: 0 0% 100%; /* White text on Dark Blue */
 
     --secondary: 220 25% 90%; /* Lighter gray for secondary elements */
     --secondary-foreground: 220 10% 30%;
@@ -22,7 +22,7 @@
     --muted: 220 20% 88%; /* Muted gray */
     --muted-foreground: 220 10% 45%;
 
-    --accent: 210 80% 65%; /* Lighter Blue for accents */
+    --accent: 239 48% 50%; /* Lighter shade of the new primary blue for accents */
     --accent-foreground: 0 0% 100%; /* White text on Accent */
 
     --destructive: 0 70% 50%; /* Refined destructive color */
@@ -30,19 +30,19 @@
 
     --border: 220 20% 85%;
     --input: 220 30% 92%;
-    --ring: 210 90% 50%; /* Primary color for rings */
+    --ring: 239 48% 21%; /* Primary color for rings */
 
     --radius: 0.5rem;
 
     /* Navbar variables */
     --nav-background: 0 0% 100%; /* White */
     --nav-foreground: 220 15% 25%; /* Dark Gray */
-    --nav-hover: 210 90% 50%; /* Primary Blue */
+    --nav-hover: 239 48% 21%; /* Primary Dark Blue */
 
     /* Footer variables */
     --footer-background: 220 30% 96%; /* Very Light Gray, slightly darker than page background */
     --footer-foreground: 220 10% 40%; /* Medium Gray */
-    --footer-link-hover: 210 90% 50%; /* Primary Blue */
+    --footer-link-hover: 239 48% 21%; /* Primary Dark Blue */
   }
 
   .dark {
@@ -55,7 +55,7 @@
     --popover: 220 15% 12%;
     --popover-foreground: 220 20% 95%;
 
-    --primary: 210 90% 60%; /* Slightly lighter blue for dark mode primary */
+    --primary: 239 48% 31%; /* Slightly lighter version of the new primary for dark mode */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 15% 20%;
@@ -64,7 +64,7 @@
     --muted: 220 15% 25%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 210 80% 70%; /* Lighter blue accent for dark mode */
+    --accent: 239 48% 60%; /* Lighter accent for dark mode */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 60%;
@@ -72,17 +72,17 @@
 
     --border: 220 15% 30%;
     --input: 220 15% 35%;
-    --ring: 210 90% 60%;
+    --ring: 239 48% 31%;
 
     /* Navbar variables for dark mode */
     --nav-background: 220 15% 15%; /* Darker shade for navbar */
     --nav-foreground: 0 0% 100%;
-    --nav-hover: 210 90% 60%;
+    --nav-hover: 239 48% 31%;
 
     /* Footer variables for dark mode */
     --footer-background: 220 15% 12%; /* Darker footer */
     --footer-foreground: 220 20% 70%;
-    --footer-link-hover: 210 90% 60%;
+    --footer-link-hover: 239 48% 31%;
   }
 }
 
@@ -95,8 +95,3 @@
     /* font-family removed to allow next/font to take precedence */
   }
 }
-
-/* Remove custom hero gradient - background will be handled by sections */
-/* .hero-gradient {
-  background-image: linear-gradient(to right, #EDE7F6, #F3E5F5);
-} */
