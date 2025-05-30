@@ -4,16 +4,17 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea'; // For notes on saved grants
+import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Save, Share2, Trash2, Info } from 'lucide-react';
 import type { Grant, SavedGrant } from '@/types';
 import { useState } from 'react';
 import { useToast } from "@/hooks/use-toast";
+import { Label } from "@/components/ui/label"; // Ensure Label is imported
 
 interface GrantCardProps {
   grant: Grant | SavedGrant;
-  isSavedView?: boolean; // To differentiate display/actions on /saved page
+  isSavedView?: boolean;
   onSave?: (grant: Grant) => void;
   onUnsave?: (grantId: string) => void;
   onUpdateNotes?: (grantId: string, notes: string) => void;
@@ -54,38 +55,38 @@ export function GrantCard({ grant, isSavedView = false, onSave, onUnsave, onUpda
   };
 
   return (
-    <Card className="flex flex-col h-full shadow-lg rounded-xl overflow-hidden border border-indigo-200 hover:shadow-xl transition-shadow">
-      <CardHeader className="bg-indigo-50 p-4">
-        <CardTitle className="text-lg font-semibold text-indigo-700">{grant.title}</CardTitle>
+    <Card className="flex flex-col h-full shadow-sm rounded-xl overflow-hidden border border-gray-200 hover:shadow-md transition-shadow bg-card"> {/* White BG, border-gray-200 */}
+      <CardHeader className="bg-muted/30 p-4"> {/* Light gray header, or white if preferred */}
+        <CardTitle className="text-lg font-semibold text-primary">{grant.title}</CardTitle> {/* Indigo, bold */}
         {(grant as SavedGrant).savedDate && isSavedView && (
-          <CardDescription className="text-xs text-indigo-500">
+          <CardDescription className="text-xs text-muted-foreground">
             Saved on: {new Date((grant as SavedGrant).savedDate).toLocaleDateString()}
           </CardDescription>
         )}
       </CardHeader>
       <CardContent className="p-4 flex-grow space-y-3">
         <div>
-          <h4 className="text-sm font-medium text-gray-700 mb-1">Summary</h4>
-          <p className="text-sm text-gray-600 leading-relaxed">{grant.summary}</p>
+          <h4 className="text-sm font-medium text-foreground mb-1">Summary</h4>
+          <p className="text-sm text-muted-foreground leading-relaxed">{grant.summary}</p>
         </div>
         <div>
-          <h4 className="text-sm font-medium text-gray-700 mb-1">Eligibility</h4>
-          <p className="text-sm text-gray-600 leading-relaxed">{grant.eligibility}</p>
+          <h4 className="text-sm font-medium text-foreground mb-1">Eligibility</h4>
+          <p className="text-sm text-muted-foreground leading-relaxed">{grant.eligibility}</p>
         </div>
         {grant.geminiAnswer && (
           <div>
-            <h4 className="text-sm font-medium text-gray-700 mb-1 flex items-center">
-              <Info size={14} className="mr-1 text-purple-600" />
+            <h4 className="text-sm font-medium text-foreground mb-1 flex items-center">
+              <Info size={14} className="mr-1 text-primary" /> {/* Icon color can be primary or accent */}
               AI Insights
             </h4>
-            <p className="text-sm text-gray-600 italic bg-purple-50 p-2 rounded-md border border-purple-200">
+            <p className="text-sm text-slate-gray italic bg-primary/5 p-2 rounded-md border border-primary/20"> {/* Italic, gray #616161 */}
               {grant.geminiAnswer}
             </p>
           </div>
         )}
         {isSavedView && (
           <div className="pt-2">
-            <Label htmlFor={`notes-${grant.id}`} className="text-sm font-medium text-gray-700 mb-1">My Notes</Label>
+            <Label htmlFor={`notes-${grant.id}`} className="text-sm font-medium text-foreground mb-1">My Notes</Label>
             <Textarea
               id={`notes-${grant.id}`}
               value={notes}
@@ -98,11 +99,11 @@ export function GrantCard({ grant, isSavedView = false, onSave, onUnsave, onUpda
           </div>
         )}
       </CardContent>
-      <CardFooter className="p-4 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0 sm:space-x-2">
+      <CardFooter className="p-4 bg-muted/50 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0 sm:space-x-2">
         <Button
           variant="link"
           asChild
-          className="text-blue-600 hover:text-blue-800 p-0 h-auto text-sm"
+          className="text-blue-600 hover:text-blue-700 hover:underline p-0 h-auto text-sm" /* Blue, underline on hover */
         >
           <Link href={grant.sourceLink} target="_blank" rel="noopener noreferrer">
             <ExternalLink size={16} className="mr-1" />
@@ -112,29 +113,29 @@ export function GrantCard({ grant, isSavedView = false, onSave, onUnsave, onUpda
         <div className="flex space-x-2">
           {!isSavedView && onSave && (
             <Button
-              variant="outline"
+              variant="default" // Use default variant for solid color
               size="sm"
               onClick={() => onSave(grant as Grant)}
-              className="text-sky-600 border-sky-600 hover:bg-sky-50 hover:text-sky-700" // Sky blue as per request
+              className="bg-sky-blue text-white hover:bg-sky-blue/90" // Sky blue #42A5F5
             >
               <Save size={16} className="mr-1" /> Save
             </Button>
           )}
           {isSavedView && onUnsave && (
              <Button
-              variant="outline"
+              variant="destructive" // Use destructive for delete
               size="sm"
               onClick={() => onUnsave(grant.id)}
-              className="text-red-600 border-red-600 hover:bg-red-50 hover:text-red-700"
+              // Destructive variant handles its own styling
             >
               <Trash2 size={16} className="mr-1" /> Delete
             </Button>
           )}
           <Button
-            variant="outline"
+            variant="secondary" // Use secondary for slate gray button
             size="sm"
             onClick={handleShare}
-            className="text-slate-600 border-slate-600 hover:bg-slate-100 hover:text-slate-700" // Slate gray
+            className="bg-slate-500 text-white hover:bg-slate-600" // Slate gray
           >
             <Share2 size={16} className="mr-1" /> Share
           </Button>
@@ -143,10 +144,3 @@ export function GrantCard({ grant, isSavedView = false, onSave, onUnsave, onUpda
     </Card>
   );
 }
-
-// Minimal Label component if not imported from ui/label to avoid circular dependency or if needed standalone
-const Label = ({ htmlFor, className, children }: { htmlFor?: string; className?: string; children: React.ReactNode }) => (
-  <label htmlFor={htmlFor} className={`block text-sm font-medium text-gray-700 ${className}`}>
-    {children}
-  </label>
-);

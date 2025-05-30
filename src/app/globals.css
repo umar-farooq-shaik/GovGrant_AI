@@ -4,8 +4,9 @@
 
 @layer base {
   :root {
-    --background: 220 60% 98%; /* Very Light Blue-Gray */
-    --foreground: 220 15% 25%; /* Dark Gray for text */
+    /* Civic Tech Theme - Light Mode */
+    --background: 220 60% 98%; /* Very Light Blue-Gray - clean and neutral */
+    --foreground: 220 15% 25%; /* Dark Gray for text - serious */
 
     --card: 0 0% 100%; /* White */
     --card-foreground: 220 15% 25%;
@@ -13,41 +14,43 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 25%;
 
-    --primary: 239 48% 21%; /* Dark Blue from #1E1F4B */
-    --primary-foreground: 0 0% 100%; /* White text on Dark Blue */
+    --primary: 239 48% 21%; /* Deep Indigo #1E1F4B - serious, trust */
+    --primary-foreground: 0 0% 100%; /* White */
 
     --secondary: 220 25% 90%; /* Lighter gray for secondary elements */
     --secondary-foreground: 220 10% 30%;
 
     --muted: 220 20% 88%; /* Muted gray */
-    --muted-foreground: 220 10% 45%;
+    --muted-foreground: 220 10% 45%; /* General muted text, can be overridden by specific slate grays */
 
-    --accent: 239 48% 50%; /* Lighter shade of the new primary blue for accents */
-    --accent-foreground: 0 0% 100%; /* White text on Accent */
+    --accent: 39 95% 56%; /* Amber #F9A826 - welcoming, calls to action */
+    --accent-foreground: 0 0% 100%; /* White text on Amber */
 
-    --destructive: 0 70% 50%; /* Refined destructive color */
+    --destructive: 0 70% 50%; /* Standard destructive color */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 85%;
-    --input: 220 30% 92%;
-    --ring: 239 48% 21%; /* Primary color for rings */
+    --border: 220 20% 85%; /* Default border color */
+    --input: 220 30% 92%; /* Default input background */
+    --ring: 239 48% 50%; /* Lighter Indigo for focus rings, or Amber depending on context */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* rounded-xl in spec, so 0.75rem is a good match for ShadCN's lg */
 
     /* Navbar variables */
-    --nav-background: 0 0% 100%; /* White */
-    --nav-foreground: 220 15% 25%; /* Dark Gray */
-    --nav-hover: 239 48% 21%; /* Primary Dark Blue */
+    --nav-background: 239 48% 21%; /* Deep Indigo #1E1F4B */
+    --nav-foreground: 0 0% 100%; /* White #FFFFFF */
+    --nav-hover: 39 95% 56%; /* Amber #F9A826 */
+    --nav-active-border: 39 95% 56%; /* Amber #F9A826 for active link bottom border */
 
     /* Footer variables */
-    --footer-background: 220 30% 96%; /* Very Light Gray, slightly darker than page background */
-    --footer-foreground: 220 10% 40%; /* Medium Gray */
-    --footer-link-hover: 239 48% 21%; /* Primary Dark Blue */
+    --footer-background: 239 48% 21%; /* Deep Indigo #1E1F4B */
+    --footer-foreground: 0 0% 80%; /* #CCCCCC */
+    --footer-link-hover: 39 95% 56%; /* Amber #F9A826 */
   }
 
   .dark {
-    --background: 220 15% 10%; /* Darker background for dark mode */
-    --foreground: 220 20% 95%; /* Light gray text */
+    /* Civic Tech Theme - Dark Mode (adjust as needed, maintaining contrast) */
+    --background: 220 15% 10%; 
+    --foreground: 220 20% 95%;
 
     --card: 220 15% 12%;
     --card-foreground: 220 20% 95%;
@@ -55,7 +58,7 @@
     --popover: 220 15% 12%;
     --popover-foreground: 220 20% 95%;
 
-    --primary: 239 48% 31%; /* Slightly lighter version of the new primary for dark mode */
+    --primary: 239 48% 31%; /* Slightly lighter Deep Indigo for dark mode */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 15% 20%;
@@ -64,25 +67,26 @@
     --muted: 220 15% 25%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 239 48% 60%; /* Lighter accent for dark mode */
-    --accent-foreground: 0 0% 100%;
+    --accent: 39 95% 60%; /* Slightly adjusted Amber for dark mode */
+    --accent-foreground: 220 15% 5%; /* Dark text on Amber for contrast if needed, or keep white */
 
     --destructive: 0 70% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 15% 30%;
     --input: 220 15% 35%;
-    --ring: 239 48% 31%;
+    --ring: 239 48% 50%;
 
     /* Navbar variables for dark mode */
-    --nav-background: 220 15% 15%; /* Darker shade for navbar */
-    --nav-foreground: 0 0% 100%;
-    --nav-hover: 239 48% 31%;
+    --nav-background: 239 48% 18%; /* Slightly adjusted Deep Indigo */
+    --nav-foreground: 0 0% 95%; 
+    --nav-hover: 39 95% 60%; /* Amber */
+    --nav-active-border: 39 95% 60%;
 
     /* Footer variables for dark mode */
-    --footer-background: 220 15% 12%; /* Darker footer */
-    --footer-foreground: 220 20% 70%;
-    --footer-link-hover: 239 48% 31%;
+    --footer-background: 239 48% 18%;
+    --footer-foreground: 0 0% 75%; /* Lighter than #CCCCCC for dark bg */
+    --footer-link-hover: 39 95% 60%;
   }
 }
 
@@ -92,6 +96,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* font-family removed to allow next/font to take precedence */
+    /* font-family will be handled by Inter via layout.tsx and tailwind.config.ts */
   }
 }
