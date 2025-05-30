@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '@/components/Logo';
-import { NAV_LINKS } from '@/lib/constants'; // APP_NAME removed as Logo handles it
+import { NAV_LINKS } from '@/lib/constants.tsx'; // APP_NAME removed as Logo handles it
 import { cn } from '@/lib/utils';
 
 export function Navbar() {

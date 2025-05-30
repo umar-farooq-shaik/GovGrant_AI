@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
-import { APP_NAME, SOCIAL_LINKS, FOOTER_LINKS } from '@/lib/constants';
+import { APP_NAME, SOCIAL_LINKS, FOOTER_LINKS } from '@/lib/constants.tsx';
 // import { cn } from '@/lib/utils'; // Not needed if not using cn here
 
 export function Footer() {
