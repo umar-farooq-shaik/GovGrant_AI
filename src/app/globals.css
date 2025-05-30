@@ -4,83 +4,85 @@
 
 @layer base {
   :root {
-    --background: 220 20% 95%; /* #F0F2F5 Light Gray */
-    --foreground: 220 10% 20%; /* Darker Gray for text */
+    --background: 220 60% 98%; /* Very Light Blue-Gray */
+    --foreground: 220 15% 25%; /* Dark Gray for text */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 220 10% 20%;
+    --card-foreground: 220 15% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 20%;
+    --popover-foreground: 220 15% 25%;
 
-    --primary: 233 47% 48%; /* #3F51B5 Indigo */
-    --primary-foreground: 0 0% 100%; /* White text on Indigo */
+    --primary: 210 90% 50%; /* Google-esque Blue */
+    --primary-foreground: 0 0% 100%; /* White text on Blue */
 
-    --secondary: 220 15% 90%; /* Lighter gray than background for secondary elements */
+    --secondary: 220 25% 90%; /* Lighter gray for secondary elements */
     --secondary-foreground: 220 10% 30%;
 
-    --muted: 220 15% 85%; /* Muted gray */
+    --muted: 220 20% 88%; /* Muted gray */
     --muted-foreground: 220 10% 45%;
 
-    --accent: 265 46% 55%; /* #7E57C2 Purple */
-    --accent-foreground: 0 0% 100%; /* White text on Purple */
+    --accent: 210 80% 65%; /* Lighter Blue for accents */
+    --accent-foreground: 0 0% 100%; /* White text on Accent */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 50%; /* Refined destructive color */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 80%;
-    --input: 220 10% 85%;
-    --ring: 233 47% 48%; /* Primary color for rings */
+    --border: 220 20% 85%;
+    --input: 220 30% 92%;
+    --ring: 210 90% 50%; /* Primary color for rings */
 
     --radius: 0.5rem;
 
-    /* Custom Navbar/Footer specific variables if needed, or use direct Tailwind classes */
-    --nav-background: 235 38% 21%; /* #1E1F4B Deep Indigo */
-    --nav-foreground: 0 0% 100%; /* White */
-    --nav-hover: 39 93% 56%; /* #F9A826 Amber */
+    /* Navbar variables */
+    --nav-background: 0 0% 100%; /* White */
+    --nav-foreground: 220 15% 25%; /* Dark Gray */
+    --nav-hover: 210 90% 50%; /* Primary Blue */
 
-    --footer-background: 235 38% 21%; /* #1E1F4B Deep Indigo */
-    --footer-foreground: 220 20% 80%; /* #CCCCCC */
-    --footer-link-hover: 39 93% 56%; /* #F9A826 Amber */
+    /* Footer variables */
+    --footer-background: 220 30% 96%; /* Very Light Gray, slightly darker than page background */
+    --footer-foreground: 220 10% 40%; /* Medium Gray */
+    --footer-link-hover: 210 90% 50%; /* Primary Blue */
   }
 
   .dark {
-    --background: 220 10% 10%;
-    --foreground: 220 20% 95%;
+    --background: 220 15% 10%; /* Darker background for dark mode */
+    --foreground: 220 20% 95%; /* Light gray text */
 
-    --card: 220 10% 12%;
+    --card: 220 15% 12%;
     --card-foreground: 220 20% 95%;
 
-    --popover: 220 10% 12%;
+    --popover: 220 15% 12%;
     --popover-foreground: 220 20% 95%;
 
-    --primary: 233 47% 58%;
+    --primary: 210 90% 60%; /* Slightly lighter blue for dark mode primary */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 10% 20%;
+    --secondary: 220 15% 20%;
     --secondary-foreground: 220 20% 90%;
 
-    --muted: 220 10% 25%;
+    --muted: 220 15% 25%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 265 46% 65%;
+    --accent: 210 80% 70%; /* Lighter blue accent for dark mode */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 30%;
-    --input: 220 10% 35%;
-    --ring: 233 47% 58%;
+    --border: 220 15% 30%;
+    --input: 220 15% 35%;
+    --ring: 210 90% 60%;
 
-    /* Custom Navbar/Footer specific variables for dark mode */
-    --nav-background: 235 38% 18%;
+    /* Navbar variables for dark mode */
+    --nav-background: 220 15% 15%; /* Darker shade for navbar */
     --nav-foreground: 0 0% 100%;
-    --nav-hover: 39 93% 66%;
+    --nav-hover: 210 90% 60%;
 
-    --footer-background: 235 38% 18%;
+    /* Footer variables for dark mode */
+    --footer-background: 220 15% 12%; /* Darker footer */
     --footer-foreground: 220 20% 70%;
-    --footer-link-hover: 39 93% 66%;
+    --footer-link-hover: 210 90% 60%;
   }
 }
 
@@ -94,7 +96,7 @@
   }
 }
 
-/* Custom hero gradient */
-.hero-gradient {
+/* Remove custom hero gradient - background will be handled by sections */
+/* .hero-gradient {
   background-image: linear-gradient(to right, #EDE7F6, #F3E5F5);
-}
+} */

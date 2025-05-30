@@ -14,24 +14,21 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-background">
       {/* Hero Section */}
-      <section className="hero-gradient py-20 md:py-32">
+      <section className="bg-background py-20 md:py-32"> {/* Removed hero-gradient, uses page background */}
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-[#1E1F4B] sm:text-5xl md:text-6xl"> 
-            {/* Dark Indigo Heading as per specific request */}
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Find Government Grants <span className="text-primary">You Deserve</span>
           </h1>
-          <p className="mt-6 text-lg leading-8 text-[#616161] max-w-2xl mx-auto">
-            {/* Slate Subtext */}
+          <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
             {APP_NAME} helps you discover government grants, subsidies, and welfare schemes you are eligible for — using conversational natural language search powered by Google Gemini AI.
           </p>
           <div className="mt-10">
             <Button
               asChild
               size="lg"
-              className="bg-[#F9A826] text-white font-bold rounded-xl px-8 py-6 text-lg hover:bg-[#C77C02] transition-all shadow-md hover:shadow-lg"
-              // Amber button, Darker Amber hover
+              className="bg-primary text-primary-foreground font-semibold rounded-lg px-8 py-3 text-lg hover:bg-primary/90 transition-all shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <Link href="/grant-finder">Start Finding Grants</Link>
             </Button>
@@ -40,19 +37,19 @@ export default function HomePage() {
       </section>
 
       {/* Why GovGrant AI? Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-secondary/30"> {/* Slightly different background for section separation */}
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">Why {APP_NAME}?</h2>
+          <h2 className="text-3xl font-bold text-center text-primary mb-16">Why {APP_NAME}?</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {WHY_GOVGRANT_AI_ITEMS.map((item) => (
-              <Card key={item.id} className="text-center shadow-lg rounded-xl hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
-                    <item.icon className="h-6 w-6" />
+              <Card key={item.id} className="text-center shadow-lg rounded-xl hover:shadow-xl transition-shadow bg-card border border-border/70">
+                <CardHeader className="pt-8">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mb-5">
+                    <item.icon className="h-8 w-8" />
                   </div>
-                  <CardTitle className="text-xl font-semibold text-primary">{item.title}</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-foreground">{item.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pb-8">
                   <p className="text-muted-foreground">{item.description}</p>
                 </CardContent>
               </Card>
@@ -62,16 +59,16 @@ export default function HomePage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 md:py-24 bg-secondary/50">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">How It Works</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <h2 className="text-3xl font-bold text-center text-primary mb-16">How It Works</h2>
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
             {HOW_IT_WORKS_STEPS.map((step) => (
-              <div key={step.id} className="flex flex-col items-center text-center p-6">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground mb-6 shadow-md">
-                  <span className="text-2xl font-bold">{step.id}</span>
+              <div key={step.id} className="flex flex-col items-center text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground mb-6 shadow-md">
+                  <span className="text-3xl font-bold">{step.id}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-primary mb-2">{step.title}</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{step.title}</h3>
                 <p className="text-muted-foreground">{step.description}</p>
               </div>
             ))}
@@ -80,7 +77,7 @@ export default function HomePage() {
       </section>
       
       {/* Placeholder for a visual element if desired */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-primary mb-6">Accessible. Transparent. Empowering.</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
@@ -89,19 +86,19 @@ export default function HomePage() {
           </p>
           <Image 
             src="https://placehold.co/1200x400.png" 
-            alt="Diverse group of people empowered by accessible grant information"
+            alt="A diverse group of people collaborating and finding opportunities using technology."
             width={1200}
             height={400}
-            className="rounded-xl shadow-lg mx-auto"
+            className="rounded-xl shadow-lg mx-auto border"
             data-ai-hint="empowerment opportunity"
           />
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 bg-secondary/50">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">Loved by Users Worldwide</h2>
+          <h2 className="text-3xl font-bold text-center text-primary mb-16">Loved by Users Worldwide</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map((testimonial) => (
               <TestimonialCard key={testimonial.id} testimonial={testimonial} />
