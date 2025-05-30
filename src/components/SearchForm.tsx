@@ -109,7 +109,7 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="font-bold text-indigo-700">Country</FormLabel>
-                    <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
+                    <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
                         <SelectTrigger className="border-gray-300 focus:ring-indigo-500">
                           <SelectValue placeholder="Select your country" />
@@ -137,8 +137,7 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                     <Select
                       onValueChange={field.onChange}
                       value={field.value}
-                      defaultValue={field.value}
-                      disabled={availableStates.length === 0 && !selectedCountryName}
+                      disabled={availableStates.length === 0}
                     >
                       <FormControl>
                         <SelectTrigger className="border-gray-300 focus:ring-indigo-500">
@@ -230,7 +229,7 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                     name="currency"
                     render={({ field }) => (
                       <FormItem className="w-1/3">
-                        <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
+                        <Select onValueChange={field.onChange} value={field.value}>
                           <FormControl>
                             <SelectTrigger className="border-gray-300 focus:ring-indigo-500">
                               <SelectValue placeholder="Currency" />
@@ -268,7 +267,7 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-                  <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
                       <SelectTrigger className="border-gray-300 focus:ring-indigo-500 text-center">
                         <SelectValue placeholder="Select your primary goal" />
