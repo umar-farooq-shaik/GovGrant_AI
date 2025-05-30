@@ -86,8 +86,8 @@ export default function HomePage() {
           <Image 
             src="https://srdalvifoundation.com/wp-content/uploads/2023/06/Blog-Image-9.png" 
             alt="Diverse individuals benefiting from government schemes, symbolizing accessibility and empowerment."
-            width={900}
-            height={300}
+            width={1200}
+            height={400}
             className="rounded-xl shadow-lg mx-auto border"
             data-ai-hint="community empowerment technology"
           />
