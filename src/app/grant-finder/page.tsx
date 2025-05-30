@@ -9,7 +9,7 @@ import type { Grant, SavedGrant } from '@/types';
 import { grantSearch, type GrantSearchInput, type GrantSearchOutput } from '@/ai/flows/grant-search';
 import { useToast } from "@/hooks/use-toast";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import { AlertCircle, CheckCircle2 } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Search } from 'lucide-react'; // Added Search import
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { APP_NAME } from '@/lib/constants';
 
