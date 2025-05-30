@@ -23,7 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { COUNTRIES, CURRENCIES, GOALS } from "@/lib/constants";
+import { COUNTRIES, CURRENCIES, GOALS } from "@/lib/constants.tsx";
 import type { GrantSearchInput } from "@/ai/flows/grant-search";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Search, DollarSign } from 'lucide-react';
@@ -112,11 +112,18 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
               <FormField
                 control={form.control}
                 name="age"
-                render={({ field }) => (
+                render={({ field: { value, onChange, ...restField } }) => (
                   <FormItem>
                     <FormLabel className="font-bold text-indigo-700">Age (Optional)</FormLabel>
                     <FormControl>
-                      <Input type="number" placeholder="Enter your age" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} className="border-gray-300 focus:ring-indigo-500" />
+                      <Input
+                        type="number"
+                        placeholder="Enter your age"
+                        {...restField}
+                        value={value ?? ''}
+                        onChange={e => onChange(e.target.valueAsNumber)}
+                        className="border-gray-300 focus:ring-indigo-500"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -153,10 +160,17 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
                   <FormField
                     control={form.control}
                     name="income"
-                    render={({ field }) => (
+                    render={({ field: { value, onChange, ...restField } }) => (
                       <FormItem className="flex-grow">
                         <FormControl>
-                          <Input type="number" placeholder="Amount" {...field} onChange={e => field.onChange(e.target.value === '' ? undefined : +e.target.value)} className="border-gray-300 focus:ring-indigo-500" />
+                          <Input
+                            type="number"
+                            placeholder="Amount"
+                            {...restField}
+                            value={value ?? ''}
+                            onChange={e => onChange(e.target.valueAsNumber)}
+                            className="border-gray-300 focus:ring-indigo-500"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -252,7 +266,6 @@ export function SearchForm({ onSubmit, isLoading }: SearchFormProps) {
               type="submit" 
               disabled={isLoading} 
               className="w-full bg-[#26A69A] text-white font-bold hover:bg-[#00796B] transition-colors text-lg py-6"
-              // Teal button
             >
               {isLoading ? (
                 <>
