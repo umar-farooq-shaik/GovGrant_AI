@@ -1,4 +1,3 @@
-
 import type React from 'react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -70,4 +69,13 @@ export interface CompanyValue {
   title: string;
   description: string;
   icon: LucideIcon;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  imageUrl?: string; // Made optional
+  dataAiHint?: string; // Made optional
+  bio: string;
 }
