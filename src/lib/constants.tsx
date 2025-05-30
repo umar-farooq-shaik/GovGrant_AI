@@ -33,8 +33,9 @@ export const HOW_IT_WORKS_STEPS = [
 export const TESTIMONIALS: Testimonial[] = [
   { id: '1', name: 'Aisha Khan', role: 'Student', avatarUrl: 'https://placehold.co/100x100.png', dataAiHint: 'woman smiling', quote: 'GovGrant AI helped me find scholarships I never knew existed! The process was so simple.' },
   { id: '2', name: 'John Doe', role: 'Small Business Owner', avatarUrl: 'https://media.istockphoto.com/id/1087531642/vector/male-face-silhouette-or-icon-man-avatar-profile-unknown-or-anonymous-person-vector.jpg?s=612x612&w=0&k=20&c=FEppaMMfyIYV2HJ6Ty8tLmPL1GX6Tz9u9Y8SCRrkD-o=', dataAiHint: 'profile silhouette', quote: 'Finally, a tool that demystifies government grants for entrepreneurs. Highly recommended!' },
-  { id: '3', name: 'Maria Garcia', role: 'Farmer', avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5bH_tuxpPsI7P023AzdLw3tExS6KdVpLqbg&s', dataAiHint: 'person happy', quote: 'I found vital subsidies for my farm through this platform. It\'s a game-changer for agricultural communities.' },
+  { id: '3', name: 'Maria Garcia', role: 'Farmer', avatarUrl: 'https://placehold.co/100x100.png', dataAiHint: 'person happy', quote: 'I found vital subsidies for my farm through this platform. It\'s a game-changer for agricultural communities.' },
 ];
+
 
 export const FAQ_ITEMS: FAQItem[] = [
   { id: '1', question: 'How accurate is the grant information?', answer: 'GovGrant AI strives to provide the most accurate and up-to-date information by sourcing data from official government publications. However, always verify details on the official grant website.' },
@@ -85,7 +86,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
 export const COMPANY_VALUES: CompanyValue[] = [
   { id: 'accessibility', title: 'Accessibility', description: 'Ensuring everyone, regardless of ability or background, can easily access grant information.', icon: Eye },
   { id: 'privacy', title: 'Privacy', description: 'Protecting user data and maintaining confidentiality is paramount to our operations.', icon: ShieldCheck },
-  { id: 'transparency', title: 'Transparency', description: 'Providing clear, unbiased information about government schemes and our processes.', icon: UsersIcon },
+  { id: 'transparency', title: 'Transparency', description: 'Providing clear, unbiased information about government schemes and our processes.', icon: Users2 },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
